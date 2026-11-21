@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8b5cf6"><link rel="manifest" href="manifest.webmanifest">
+<title>طلایی شو | آزمون‌یار</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:linear-gradient(135deg,#fff7ed,#f5f3ff);color:#29243b}
+header{padding:28px 18px;text-align:center;background:linear-gradient(120deg,#7c3aed,#ec4899);color:white;border-radius:0 0 28px 28px}
+h1{margin:0 0 8px;font-size:30px}.wrap{max-width:850px;margin:22px auto;padding:0 14px}
+.card{background:white;border:1px solid #eee;border-radius:20px;padding:18px;margin:14px 0;box-shadow:0 8px 25px #34205a12}
+button,input,select,textarea{font:inherit;border-radius:12px;padding:11px;border:1px solid #d8d2e5;margin:5px;max-width:100%}
+button{background:#7c3aed;color:white;border:0;cursor:pointer}.secondary{background:#f3e8ff;color:#5b21b6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+small,.muted{color:#766d85}.hidden{display:none}.question{padding:12px;background:#faf8ff;border-radius:12px;margin:10px 0}
+</style>
+</head>
+<body>
+<header><h1>✨ طلایی شو ✨</h1><div>یادگیری، تمرین و آزمون با حال خوب</div></header>
+<main class="wrap">
+<section class="card">
+<h2>خوش اومدی! 🌟</h2>
+<p>برای ورود دانش‌آموز، نام و کد کلاس را وارد کن.</p>
+<input id="studentName" placeholder="نام دانش‌آموز">
+<input id="classCode" placeholder="کد کلاس (مثلاً H8-1405)">
+<button onclick="studentEnter()">ورود به آزمون‌ها</button>
+<p id="studentMsg" class="muted"></p>
+</section>
+<section class="card">
+<h2>پنل دبیر</h2>
+<p>ورود آزمایشی دبیر با رمز محلی</p>
+<input id="teacherPass" type="password" placeholder="رمز دبیر">
+<button onclick="teacherEnter()">ورود دبیر</button>
+<div id="teacherPanel" class="hidden">
+<hr><div class="grid">
+<div><h3>ساخت کلاس</h3><input id="newClass" placeholder="نام کلاس"><input id="newCode" placeholder="کد کلاس"><button onclick="addClass()">ثبت کلاس</button></div>
+<div><h3>افزودن سؤال</h3><textarea id="qText" placeholder="متن سؤال"></textarea><input id="qA" placeholder="گزینه ۱"><input id="qB" placeholder="گزینه ۲"><input id="qC" placeholder="گزینه ۳"><input id="qD" placeholder="گزینه ۴"><select id="qCorrect"><option value="0">گزینه ۱</option><option value="1">گزینه ۲</option><option value="2">گزینه ۳</option><option value="3">گزینه ۴</option></select><button onclick="addQuestion()">ثبت سؤال</button></div>
+</div><h3>کلاس‌ها و سؤال‌ها</h3><div id="teacherData"></div>
+</div>
+</section>
+<section class="card"><h2>آزمون نمونه</h2><p>این نسخه شروع، اطلاعات را فقط در همین مرورگر ذخیره می‌کند.</p><div id="examArea"></div></section>
+<footer class="muted" style="text-align:center;padding:18px">طلایی شو · نسخه آغازین آزمایشی</footer>
+</main>
+<script src="app.js"></script>
+</body></html>
